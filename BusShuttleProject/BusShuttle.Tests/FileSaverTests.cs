@@ -26,13 +26,13 @@ public class FileSaverTests
     public void Test_FileSaver_AppendData()
 
     {
-        Stop sampleStop = new Stop("myStop");
-        Loop sampleLoop = new Loop("myLoop");
+        Stop sampleStop = new Stop("MyStop");
+        Loop sampleLoop = new Loop("MyLoop");
         Driver sampleDriver = new Driver("Sample");
         PassengerData sampleData = new PassengerData(5,sampleStop,sampleLoop,sampleDriver);
 
         fileSaver.AppendData(sampleData);
         var contentFromFile = File.ReadAllText(testFileName);
-        Assert.Equal("Sample:myLoop:myStop:5" +Environment.NewLine, contentFromFile);
+        Assert.Equal("Sample:MyLoop:MyStop:5" +Environment.NewLine, contentFromFile);
     }
 }
